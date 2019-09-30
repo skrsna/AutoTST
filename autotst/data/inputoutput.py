@@ -33,7 +33,7 @@ import logging
 import numpy as np
 from autotst.reaction import Reaction, TS
 from autotst.species import Species, Conformer
-from autotst.calculator.vibrational_analysis import VibrationalAnalysis
+from autotst.calculator import VibrationalAnalysis
 from autotst.data.base import QMData
 import rmgpy
 from rmgpy.molecule import Molecule as RMGMolecule

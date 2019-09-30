@@ -14,7 +14,7 @@ import autotst
 from autotst.reaction import Reaction, TS
 from autotst.species import Species, Conformer
 from autotst.geometry import Torsion
-from autotst.calculator.gaussian import Gaussian
+from autotst.calculator import Gaussian
 
 from cclib.io import ccread
 

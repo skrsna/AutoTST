@@ -29,7 +29,7 @@
 
 import unittest, os, sys, shutil
 from autotst.reaction import Reaction
-from autotst.calculator.statmech import StatMech
+from autotst.calculator import StatMech
 from rmgpy.reaction import Reaction as RMGReaction
 from rmgpy.kinetics import Arrhenius
 

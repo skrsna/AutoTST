@@ -36,7 +36,7 @@ from ase import Atom, Atoms
 from cclib.io import ccread
 from autotst.reaction import Reaction, TS
 from autotst.species import Species, Conformer
-from autotst.calculator.vibrational_analysis import percent_change, VibrationalAnalysis
+from autotst.calculator import percent_change, VibrationalAnalysis
 
 class VibrationalAnalysisTest(unittest.TestCase):
 

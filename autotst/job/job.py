@@ -1,6 +1,6 @@
-from autotst.calculator.gaussian import Gaussian
-from autotst.calculator.vibrational_analysis import VibrationalAnalysis, percent_change
-from autotst.calculator.statmech import StatMech
+from autotst.calculator import Gaussian
+from autotst.calculator import VibrationalAnalysis, percent_change
+from autotst.calculator import StatMech
 from autotst.reaction import Reaction, TS
 from autotst.species import Species, Conformer
 from autotst.geometry import Bond, Angle, Torsion, CisTrans, ChiralCenter

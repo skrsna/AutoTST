@@ -3,7 +3,7 @@ import unittest
 import os
 import shutil
 
-from autotst.calculator.orca import Orca
+from autotst.calculator import Orca
 from autotst.species import Conformer
 
 

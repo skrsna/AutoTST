@@ -33,7 +33,7 @@ from autotst.reaction import Reaction, TS
 from autotst.species import Species, Conformer
 from autotst.data.base import TransitionStates
 from autotst.job.job import Job
-from autotst.calculator.gaussian import Gaussian
+from autotst.calculator import Gaussian
 from rmgpy.reaction import Reaction as RMGReaction
 from rmgpy.species import Species as RMGSpecies
 from rmgpy.molecule import Molecule as RMGMolecule
