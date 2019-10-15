@@ -4,4 +4,4 @@
 from .gaussian import Gaussian
 from .orca import Orca
 from .statmech import StatMech
-from .vibrational_analysis import VibrationalAnalysis
+from .vibrational_analysis import VibrationalAnalysis, percent_change
