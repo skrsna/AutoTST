@@ -31,6 +31,7 @@
 import itertools, logging, os, time
 import pandas as pd
 import numpy as np
+import sys
 import multiprocessing
 
 import ase
@@ -38,6 +39,7 @@ import ase.units
 import ase.calculators.calculator 
 import ase.optimize
 import ase.constraints
+from ase.calculators.socketio import SocketIOCalculator
 
 import rdkit.Chem
 
@@ -174,7 +176,7 @@ def systematic_search(conformer,
             label = conformer.smiles
             type = 'species'
 
-        if isinstance(calc, ase.calculators.calculator.FileIOCalculator):
+        if isinstance(calculator, ase.calculators.calculator.FileIOCalculator):
             if calculator.directory:
                 directory = calculator.directory 
             else: 
@@ -189,7 +191,7 @@ def systematic_search(conformer,
 
             calculator.atoms = conformer.ase_molecule
 
-        conformer.ase_molecule.set_calculator(calculator)
+        #conformer.ase_molecule.set_calculator(calculator)
         opt = ase.optimize.BFGS(conformer.ase_molecule, logfile=None)
 
         if type == 'species':
@@ -197,7 +199,9 @@ def systematic_search(conformer,
                 c = ase.constraints.FixBondLengths(labels)
                 conformer.ase_molecule.set_constraint(c)
             try:
-                opt.run(steps=1e6)
+                with SocketIOCalculator(calculator, log=sys.stdout, unixsocket='Hello') as calc:
+                    conformer.ase_molecule.set_calculator(calc)
+                    opt.run(steps=1e6)
             except RuntimeError:
                 logging.info("Optimization failed...we will use the unconverged geometry")
                 pass
